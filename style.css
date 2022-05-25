@@ -1,22 +1,5 @@
-body {
-  height: 100%;
-}
-
-.row-1,
-.row-2,
-.row-3,
-.row-4 {
-  background-color: red;
-  width: 64vw;
-  height: 16vw;
-}
-
-.cell-div {
-  background-color: pink;
-  width: 16vw;
-  height: 16vw;
-  display: flex;
-  /* flex-wrap: wrap; */
-  flex-direction: column;
-  margin: 0;
+.sketchpad {
+  width: 30vw;
+  height: 30vw;
+  display: grid;
 }

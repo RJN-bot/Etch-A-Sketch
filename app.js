@@ -1,42 +1,47 @@
-const sketchPad = document.querySelector('.sketchpad');
+let color = 'black';
 
-rowDiv = () => {
+function createGrid(size) {
+    const sketchPad = document.querySelector('.sketchpad');
+    sketchPad.style.gridTemplateColumns = `repeat(${size}, 1fr)`
+    sketchPad.style.gridTemplateRows = `repeat(${size}, 1fr)`
 
-    for (let i = 1; i < 5; i++) {
+    for (let i = 0; i < size * size; i++) {
         const newDiv = document.createElement('div');
-        newDiv.classList.add(`row-${i}`);
-        sketchPad.appendChild(newDiv);
+        newDiv.style.backgroundColor = "white";
+        newDiv.addEventListener('mouseover', changeCellColor)
+        newDiv.classList.add('cell');
+        sketchPad.insertAdjacentElement('beforeend', newDiv)
+    }
+}
+
+createGrid(16);
+
+function changeSize(input) {
+    if (input >= 2 && input <= 100) {
+        createGrid(input);
+
+    } else {
+        alert('Only value between 2 and 100 accepted')
     }
 }
 
 
-const rowDivSelect = document.querySelectorAll('.row-div');
-cellDiv = () => {
-
-
-    const cellDiv = document.createElement('div');
-
-    cellDiv.classList.add('cell-div');
-    for (let i = 1; i < 5; i++) {
-        rowDivSelect[i].appendChild(cellDiv);
-
+function changeCellColor() {
+    if (color === 'random') {
+        this.style.backgroundColor = `rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`
     }
+    else {
+        this.style.backgroundColor = color;
+    }
+}
 
-    console.log(rowDivSelect);
-
+function changeColor(choice) {
+    color = choice;
 }
 
 
-
-function createGrid() {
-
-    rowDiv();
-    for (let j = 0; j < 4; j++) {
-        cellDiv();
-    }
-
-
+function resetBoard() {
+    const sketchPad = document.querySelector('.sketchpad');
+    let cell = sketchPad.querySelectorAll('div');
+    cell.forEach((div) => div.style.backgroundColor = 'white')
 }
-
-createGrid();
-    
