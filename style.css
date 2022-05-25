@@ -1,5 +1,36 @@
 .sketchpad {
-  width: 30vw;
-  height: 30vw;
   display: grid;
+  margin: auto;
+  margin-block: 1rem;
+  width: 40vw;
+  height: 40vw;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* width: 70vw; */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons button {
+  width: 14vw;
+  font-size: 0.75rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.controls {
+  width: 60vw;
 }
