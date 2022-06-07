@@ -4,6 +4,7 @@
   margin-block: 1rem;
   width: 40vw;
   height: 40vw;
+  border: 3px solid black;
 }
 
 .content {
